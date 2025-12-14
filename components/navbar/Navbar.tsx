@@ -1,5 +1,6 @@
 import Logo from "@/components/navbar/Logo";
 import {DarkMode} from "@/components/navbar/DarkMode";
+import LinksDropdown from "@/components/navbar/LinksDropdown";
 
 
 function Navbar() {
@@ -9,6 +10,8 @@ function Navbar() {
         <Logo />
         React challenges
         <DarkMode />
+
+        <LinksDropdown />
       </div>
     </nav>
   );
