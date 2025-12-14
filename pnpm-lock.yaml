@@ -56,6 +56,9 @@ dependencies:
   react-dom:
     specifier: 19.2.1
     version: 19.2.1(react@19.2.1)
+  react-icons:
+    specifier: ^5.5.0
+    version: 5.5.0(react@19.2.1)
   sonner:
     specifier: ^2.0.7
     version: 2.0.7(react-dom@19.2.1)(react@19.2.1)
@@ -3838,6 +3841,14 @@ packages:
     dependencies:
       react: 19.2.1
       scheduler: 0.27.0
+    dev: false
+
+  /react-icons@5.5.0(react@19.2.1):
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 19.2.1
     dev: false
 
   /react-is@16.13.1:
