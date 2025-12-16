@@ -1,4 +1,5 @@
-import {Button} from "@/components/ui/button";
+// import {Button} from "@/components/ui/button";
+import { Flex, Text, Button } from "@radix-ui/themes";
 
 export default function HomePage() {
   return (
@@ -7,6 +8,12 @@ export default function HomePage() {
         <Button className="capitalize py-8">
           hello world
         </Button>
+
+        <Flex direction="column" gap="2">
+			    <Text>Hello from Radix Themes :)</Text>
+			    <Button>Lets go</Button>
+		    </Flex>
+
       </main>
     </div>
   );

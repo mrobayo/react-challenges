@@ -1,6 +1,8 @@
 "use client";
 
-import {ThemeProvider} from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Theme as RadixTheme } from "@radix-ui/themes";
+
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return <>
@@ -9,7 +11,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >{children}
+          >
+       <RadixTheme>{children}</RadixTheme>
      </ThemeProvider>
   </>;
 }
