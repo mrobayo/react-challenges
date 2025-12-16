@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70c840fc-cd9a-4469-9385-c7f114f6161c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/api/users/[id]/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/prisma.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/providers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/providers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
@@ -17,6 +17,10 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="77" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,6 +37,9 @@
     &quot;accountId&quot;: &quot;c2e4655c-2152-4dfa-a91d-0044188eb796&quot;
   }
 }</component>
+  <component name="PrismaServiceSettings">
+    <option name="lspServerPackageName" value="$USER_HOME$/.nvm/versions/node/v24.11.1/lib/node_modules/@prisma/language-server" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -47,8 +54,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "/Users/marvic/Dev/dev-react/react-challenges/app/system/pools/challenges",
+    "js.debugger.nextJs.config.created.client": "true",
+    "last_opened_file_path": "/Users/marvic/Dev/dev-react/react-challenges/lib",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -57,13 +68,14 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
     "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "sshConsole",
+    "settings.editor.selected.configurable": "settings.prisma",
     "ts.external.directory.path": "/Users/marvic/Dev/dev-react/react-challenges/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/app/system/pools/challenges" />
       <recent name="$PROJECT_DIR$/app/system/pools/questions" />
       <recent name="$PROJECT_DIR$/app/partner/positions" />
@@ -73,7 +85,10 @@
       <recent name="$PROJECT_DIR$/app/system/pools" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -88,8 +103,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.19416.19" />
-        <option value="bundled-python-sdk-337b0a7a993a-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.19416.19" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-PY-253.28294.336" />
+        <option value="bundled-python-sdk-0978a7220b69-9867c7d4c0a4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.28294.336" />
       </set>
     </attachedChunks>
   </component>
@@ -106,7 +121,12 @@
       <workItem from="1765689767117" duration="5393000" />
       <workItem from="1765770621969" duration="4469000" />
       <workItem from="1765808494775" duration="1298000" />
-      <workItem from="1765849850553" duration="3180000" />
+      <workItem from="1765849850553" duration="9625000" />
+      <workItem from="1765861197771" duration="863000" />
+      <workItem from="1765862201036" duration="93000" />
+      <workItem from="1765862331694" duration="692000" />
+      <workItem from="1765863075147" duration="210000" />
+      <workItem from="1765863304805" duration="980000" />
     </task>
     <servers />
   </component>
