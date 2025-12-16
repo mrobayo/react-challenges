@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prisma": "pnpm dlx prisma studio --config ./prisma.config.ts",
+    "prisma:generate": "pnpm dlx prisma generate"
   },
   "engines": {
     "node": ">=24.11"

@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70c840fc-cd9a-4469-9385-c7f114f6161c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/api/users/[id]/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/prisma.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/schema/questions.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="77" />
+    <option name="cachedIndexableFilesCount" value="79" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -57,6 +58,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "develop",
     "js.debugger.nextJs.config.created.client": "true",
     "last_opened_file_path": "/Users/marvic/Dev/dev-react/react-challenges/lib",
@@ -71,6 +73,11 @@
     "settings.editor.selected.configurable": "settings.prisma",
     "ts.external.directory.path": "/Users/marvic/Dev/dev-react/react-challenges/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -82,6 +89,8 @@
       <recent name="$PROJECT_DIR$/app/partner/settings" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/prisma/schema" />
+      <recent name="$PROJECT_DIR$/app/api/users/[id]" />
       <recent name="$PROJECT_DIR$/app/system/pools" />
     </key>
   </component>
@@ -126,7 +135,7 @@
       <workItem from="1765862201036" duration="93000" />
       <workItem from="1765862331694" duration="692000" />
       <workItem from="1765863075147" duration="210000" />
-      <workItem from="1765863304805" duration="980000" />
+      <workItem from="1765863304805" duration="4009000" />
     </task>
     <servers />
   </component>

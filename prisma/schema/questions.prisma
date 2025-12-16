@@ -1,0 +1,30 @@
+model QzCategory {
+  id        String       @id @default(ulid())
+  name      String       @unique @db.VarChar(50)
+  questions QzQuestion[]
+
+  @@map("qz_categories")
+}
+
+model QzQuestion {
+  id         String     @id @default(ulid())
+  text       String     @db.VarChar(8000)
+  categoryId String
+  difficulty String     @db.VarChar(20)
+  type       String     @db.VarChar(20)
+  points     Int
+  options    QzOption[]
+  category   QzCategory @relation(fields: [categoryId], references: [id])
+
+  @@map("qz_questions")
+}
+
+model QzOption {
+  id         String     @id @default(ulid())
+  text       String     @db.VarChar(4000)
+  isCorrect  Boolean
+  questionId String
+  question   QzQuestion @relation(fields: [questionId], references: [id])
+
+  @@map("qz_options")
+}
