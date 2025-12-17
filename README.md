@@ -25,7 +25,7 @@ pnpm dlx prisma generate
 # Tables
 
 ```shell
-pnpm dlx shadcn@latest add table
+pnpm dlx shadcn@latest add table badge
 pnpm add @tanstack/react-table
 ```
 
