@@ -1,11 +1,19 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
+import { ColumnDef } from "@tanstack/react-table"
+import { DataTable } from "@/components/data-table/DataTable"
+import {Heading} from "@radix-ui/themes";
 
 type QzCategory = {
   id: string;
   name: string;
 };
+
+const columns: ColumnDef<QzCategory>[] = [
+  { accessorKey: "id", header: "Id" },
+  { accessorKey: "name", header: "Name" }
+]
 
 export default function QzCategoriesPage() {
   const [categories, setCategories] = useState<QzCategory[]>([]);
@@ -24,14 +32,8 @@ export default function QzCategoriesPage() {
 
   return (
     <div>
-      <h1>Quiz Categories</h1>
-      <ul>
-        {categories.map((cat) => (
-          <li key={cat.id}>
-            {cat.id}: {cat.name}
-          </li>
-        ))}
-      </ul>
+      <Heading as="h3">Quiz Categories</Heading>
+      <DataTable columns={columns} data={categories} />
     </div>
   );
 }

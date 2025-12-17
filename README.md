@@ -20,3 +20,12 @@ pnpm dlx prisma init --datasource-provider mysql --output ../generated/prisma
 pnpm dlx prisma migrate dev --name init
 pnpm dlx prisma generate
 ```
+
+
+# Tables
+
+```shell
+pnpm dlx shadcn@latest add table
+pnpm add @tanstack/react-table
+```
+
