@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70c840fc-cd9a-4469-9385-c7f114f6161c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/api/categories/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/system/pools/categories/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/system/pools/questions/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/system/pools/questions/new/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/categories/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/categories/[id]/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/prisma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/prisma.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generated/prisma/browser.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generated/prisma/client.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generated/prisma/commonInputTypes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generated/prisma/enums.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generated/prisma/internal/class.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generated/prisma/internal/prismaNamespace.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generated/prisma/internal/prismaNamespaceBrowser.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generated/prisma/models.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generated/prisma/models/User.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema/questions.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema/questions.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/categories/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/categories/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/system/pools/categories/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/system/pools/categories/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +133,7 @@
       <workItem from="1765863075147" duration="210000" />
       <workItem from="1765863304805" duration="7809000" />
       <workItem from="1765935594801" duration="1940000" />
-      <workItem from="1765937541980" duration="2372000" />
+      <workItem from="1765937541980" duration="3919000" />
     </task>
     <servers />
   </component>
