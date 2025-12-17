@@ -12,7 +12,7 @@ model QzQuestion {
   categoryId String
   difficulty String     @db.VarChar(20)
   type       String     @db.VarChar(20)
-  points     Int
+  points     Int        @default(1)
   options    QzOption[]
   category   QzCategory @relation(fields: [categoryId], references: [id])
 
@@ -22,7 +22,7 @@ model QzQuestion {
 model QzOption {
   id         String     @id @default(ulid())
   text       String     @db.VarChar(4000)
-  isCorrect  Boolean
+  isCorrect  Boolean    @default(false)
   questionId String
   question   QzQuestion @relation(fields: [questionId], references: [id])
 
