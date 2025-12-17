@@ -1,11 +1,11 @@
 'use client';
 
-import {Button} from "@/components/ui/button";
+import Link from "next/link";
 
 export default function SignOutLink() {
   return (
-    <a href="/">
+    <Link href="/">
       Sign Out
-    </a>
+    </Link>
   );
 }
