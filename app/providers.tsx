@@ -12,7 +12,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             enableSystem
             disableTransitionOnChange
           >
-       <RadixTheme>{children}</RadixTheme>
+       <RadixTheme>
+           {children}
+       </RadixTheme>
      </ThemeProvider>
   </>;
 }

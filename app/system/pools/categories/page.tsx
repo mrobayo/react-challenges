@@ -6,6 +6,8 @@ import { DataTable } from "@/components/data-table/DataTable"
 import {Heading} from "@radix-ui/themes";
 import { Checkbox } from "@/components/ui/checkbox"
 import { LuPlus } from 'react-icons/lu';
+import {CategoryModal} from "@/app/system/pools/categories/category-modal";
+import {showModal} from "@/components/modal/show-modal";
 
 type QzCategory = {
   id: string;
@@ -41,6 +43,7 @@ const columns: ColumnDef<QzCategory>[] = [
 export default function QzCategoriesPage() {
   const [categories, setCategories] = useState<QzCategory[]>([]);
   const [loading, setLoading] = useState(true);
+  // const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     fetch('/api/categories')
@@ -58,9 +61,17 @@ export default function QzCategoriesPage() {
       <Heading as="h3">Quiz Categories</Heading>
       <DataTable columns={columns} data={categories} globalAction={{
         label: "Add",
-        action: () => console.log("add..."),
+        action: () => {
+          console.log("add...")
+          //setIsOpen(true);
+          showModal(CategoryModal, {
+            open: true,
+            unmount: () => {}
+          });
+        },
         icon: LuPlus,
       }}/>
+      {/*<CategoryModal open={isOpen}/>*/}
     </div>
   );
 }

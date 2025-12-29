@@ -3,8 +3,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 
 import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
 import Providers from "@/app/providers";
+
+import Navbar from "@/components/navbar/Navbar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,12 +35,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <Providers>
-        <Navbar />
-        <main className="container py-10">
-          {children}
-        </main>
-      </Providers>
+        <Providers>
+          <header>
+            <Navbar />
+          </header>
+          <SidebarProvider>
+            <aside>
+              <AppSidebar />
+            </aside>
+            <main className="container py-10">
+              {children}
+            </main>
+          </SidebarProvider>
+        </Providers>
       </body>
     </html>
   );

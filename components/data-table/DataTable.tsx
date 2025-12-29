@@ -58,7 +58,7 @@ export function DataTable<TData, TValue>({
   })
 
   const globalButton = globalAction && (
-    <Button variant="default" className="ml-2"><globalAction.icon /> {globalAction.label}</Button>
+    <Button variant="default" className="ml-2" onClick={globalAction.action}><globalAction.icon /> {globalAction.label}</Button>
   )
 
   return (
