@@ -1,4 +1,3 @@
-
 # Install
 
 ```shell
@@ -21,11 +20,9 @@ pnpm dlx prisma migrate dev --name init
 pnpm dlx prisma generate
 ```
 
-
 # Tables
 
 ```shell
 pnpm dlx shadcn@latest add table badge
 pnpm add @tanstack/react-table
 ```
-

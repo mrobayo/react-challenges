@@ -1,7 +1,7 @@
-"use client"
+'use client';
 
-import React from 'react'
-import { Flex, Text, Button } from '@radix-ui/themes'
+import React from 'react';
+import { Flex, Text, Button } from '@radix-ui/themes';
 import {
   Dialog,
   DialogClose,
@@ -13,24 +13,17 @@ import {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from '@/components/ui/dialog';
 type ModalProps = {
-  title: string
-  description?: string
-  children: React.ReactNode
-  open: boolean
-  onOpenChange: (open: boolean) => void
-  footer?: React.ReactNode
-}
+  title: string;
+  description?: string;
+  children: React.ReactNode;
+  open: boolean;
+  onOpenChange?: (open: boolean) => void;
+  footer?: React.ReactNode;
+};
 
-export default function Modal({
-  title,
-  description,
-  children,
-  open,
-  onOpenChange,
-  footer,
-}: ModalProps) {
+export default function Modal({ title, description, children, open, onOpenChange, footer }: ModalProps) {
   const defaultFooter = (
     <Flex gap="3" justify="end">
       <DialogClose asChild>
@@ -42,7 +35,7 @@ export default function Modal({
         <Button color="blue">Confirm</Button>
       </DialogClose>
     </Flex>
-  )
+  );
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -63,15 +56,13 @@ export default function Modal({
             padding: 24,
           }}
         >
+          <DialogHeader>
+            <DialogTitle>{title}</DialogTitle>
+            {description && <DialogDescription>{description}</DialogDescription>}
+          </DialogHeader>
+
           <Flex direction="column" gap="4">
-            <Flex justify="between" align="center">
-              <DialogTitle>{title}</DialogTitle>
-            </Flex>
-            {description && (
-              <Text size="2" color="gray">
-                {description}
-              </Text>
-            )}
+            <Flex justify="between" align="center"></Flex>
             <Flex direction="column" gap="3">
               {children}
             </Flex>
@@ -80,5 +71,5 @@ export default function Modal({
         </DialogContent>
       </DialogPortal>
     </Dialog>
-  )
+  );
 }

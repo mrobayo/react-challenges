@@ -12,34 +12,31 @@ import UserIcon from './UserIcon';
 import { links } from '@/utils/links';
 import SignOutLink from './SignOutLink';
 
-
 function LinksDropdown() {
-  const isAdminUser = false // userId === process.env.ADMIN_USER_ID;
+  const isAdminUser = false; // userId === process.env.ADMIN_USER_ID;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='outline' className='flex gap-4 max-w-[100px]'>
-          <LuAlignLeft className='w-6 h-6' />
+        <Button variant="outline" className="flex gap-4 max-w-[100px]">
+          <LuAlignLeft className="w-6 h-6" />
           <UserIcon />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='w-52' align='start' sideOffset={10}>
-
-          {links.map((link) => {
-            if (link.label === 'admin' && !isAdminUser) return null;
-            return (
-              <DropdownMenuItem key={link.href}>
-                <Link href={link.href} className='capitalize w-full'>
-                  {link.label}
-                </Link>
-              </DropdownMenuItem>
-            );
-          })}
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <SignOutLink />
-          </DropdownMenuItem>
-
+      <DropdownMenuContent className="w-52" align="start" sideOffset={10}>
+        {links.map((link) => {
+          if (link.label === 'admin' && !isAdminUser) return null;
+          return (
+            <DropdownMenuItem key={link.href}>
+              <Link href={link.href} className="capitalize w-full">
+                {link.label}
+              </Link>
+            </DropdownMenuItem>
+          );
+        })}
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <SignOutLink />
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

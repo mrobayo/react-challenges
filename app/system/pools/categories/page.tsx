@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useEffect, useState } from 'react'
-import { ColumnDef } from "@tanstack/react-table"
-import { DataTable } from "@/components/data-table/DataTable"
-import {Heading} from "@radix-ui/themes";
-import { Checkbox } from "@/components/ui/checkbox"
+import React, { useEffect, useState } from 'react';
+import { ColumnDef } from '@tanstack/react-table';
+import { DataTable } from '@/components/data-table/DataTable';
+import { Heading } from '@radix-ui/themes';
+import { Checkbox } from '@/components/ui/checkbox';
 import { LuPlus } from 'react-icons/lu';
-import {CategoryModal} from "@/app/system/pools/categories/category-modal";
-import {showModal} from "@/components/modal/show-modal";
+import { CategoryModal } from '@/app/system/pools/categories/category-modal';
+import { showModal } from '@/components/modal/show-modal';
 
 type QzCategory = {
   id: string;
@@ -15,30 +15,29 @@ type QzCategory = {
 };
 
 const columns: ColumnDef<QzCategory>[] = [
-  { //accessorKey: "id",
+  {
+    //accessorKey: "id",
     // header: "Id",
-    id: "select",
+    id: 'select',
     header: ({ table }) => (
-        <Checkbox
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
-          }
-          className="bg-white"
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
-        />
-      ),
-      cell: ({ row }) => (
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
-      ),},
-  { id: "id", accessorKey: "id", header: "Id" },
-  { id: "name", accessorKey: "name", header: "Name" }
-]
+      <Checkbox
+        checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate')}
+        className="bg-white"
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+  },
+  { id: 'id', accessorKey: 'id', header: 'Id' },
+  { id: 'name', accessorKey: 'name', header: 'Name' },
+];
 
 export default function QzCategoriesPage() {
   const [categories, setCategories] = useState<QzCategory[]>([]);
@@ -59,18 +58,22 @@ export default function QzCategoriesPage() {
   return (
     <div>
       <Heading as="h3">Quiz Categories</Heading>
-      <DataTable columns={columns} data={categories} globalAction={{
-        label: "Add",
-        action: () => {
-          console.log("add...")
-          //setIsOpen(true);
-          showModal(CategoryModal, {
-            open: true,
-            unmount: () => {}
-          });
-        },
-        icon: LuPlus,
-      }}/>
+      <DataTable
+        columns={columns}
+        data={categories}
+        globalAction={{
+          label: 'Add',
+          action: () => {
+            console.log('add...');
+            //setIsOpen(true);
+            showModal(CategoryModal, {
+              open: true,
+              unmount: () => {},
+            });
+          },
+          icon: LuPlus,
+        }}
+      />
       {/*<CategoryModal open={isOpen}/>*/}
     </div>
   );

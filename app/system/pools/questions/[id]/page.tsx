@@ -1,5 +1,3 @@
-
 export default function QuestionByIdPage() {
-  return <div>QuestionByIdPage</div>
+  return <div>QuestionByIdPage</div>;
 }
-

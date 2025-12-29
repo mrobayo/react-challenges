@@ -1,60 +1,56 @@
-'use client'
+'use client';
 
-import React from 'react'
-import {createRoot, Root} from 'react-dom/client'
-import { Flex, Text, Button } from '@radix-ui/themes'
-import {
-  DialogClose,
-} from "@/components/ui/dialog"
-import Modal from "@/components/modal/Modal"
+import React from 'react';
+import { createRoot, Root } from 'react-dom/client';
+import { Flex, Text, Button } from '@radix-ui/themes';
+import { DialogClose } from '@/components/ui/dialog';
+import Modal from '@/components/modal/Modal';
 
 type ModalProps = {
-  title: string
-  description?: string
-  children: React.ReactNode
-  open: boolean
-  onOpenChange: (open: boolean) => void
-  footer?: React.ReactNode
-}
-
+  title: string;
+  description?: string;
+  children: React.ReactNode;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  footer?: React.ReactNode;
+};
 
 export function showModal<P extends Omit<ModalProps, 'open' | 'onOpenChange'>>(
   Component: React.ComponentType<P>,
   props: P
 ) {
-  const mountNode = document.createElement('div')
+  const mountNode = document.createElement('div');
   const modalRoot = document.body; //document.getElementById('modal-root') ??
-  modalRoot.appendChild(mountNode)
-  const root = createRoot(mountNode)
+  modalRoot.appendChild(mountNode);
+  const root = createRoot(mountNode);
 
-  const ModalHost = ({ mountPoint } : { mountPoint: Root }) => {
-    const [open, setOpen] = React.useState(true)
+  const ModalHost = ({ mountPoint }: { mountPoint: Root }) => {
+    const [open, setOpen] = React.useState(true);
 
     const handleOpenChange = (next: boolean) => {
-      setOpen(next)
+      setOpen(next);
       if (!next) {
         requestAnimationFrame(() => {
-          mountPoint.unmount()
-          mountNode.remove()
-        })
+          mountPoint.unmount();
+          mountNode.remove();
+        });
       }
-    }
-    return <Component {...props} open={open} onOpenChange={handleOpenChange} />
-  }
+    };
+    return <Component {...props} open={open} onOpenChange={handleOpenChange} />;
+  };
 
-  root.render(<ModalHost mountPoint={root}/>)
-  return () => root.unmount()
+  root.render(<ModalHost mountPoint={root} />);
+  return () => root.unmount();
 }
 
-type AlertModalProps = Omit<ModalProps, 'children'>
+type AlertModalProps = Omit<ModalProps, 'children'>;
 export function AlertModal(props: AlertModalProps) {
   return (
-    <Modal
-      {...props}>
+    <Modal {...props}>
       <Text>{props.description}</Text>
-      <AlertButton/>
+      <AlertButton />
     </Modal>
-  )
+  );
 }
 
 export function AlertButton() {
@@ -69,11 +65,7 @@ export function AlertButton() {
           </DialogClose>
         </Flex>
       ),
-    })
-  }
-  return (
-    <Button onClick={handleClick}>
-      Show alert
-    </Button>
-  )
+    });
+  };
+  return <Button onClick={handleClick}>Show alert</Button>;
 }

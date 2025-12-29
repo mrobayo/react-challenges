@@ -1,6 +1,6 @@
-"use client"
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -8,40 +8,29 @@ import {
   getCoreRowModel,
   getFilteredRowModel,
   useReactTable,
-} from "@tanstack/react-table"
+} from '@tanstack/react-table';
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-import {Box, Flex} from "@radix-ui/themes";
-import {IconType} from "react-icons";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Box, Flex } from '@radix-ui/themes';
+import { IconType } from 'react-icons';
 
 export type GlobalActionButton = {
-  icon: IconType,
-  label: string,
-  action: () => void
-}
+  icon: IconType;
+  label: string;
+  action: () => void;
+};
 
 interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[]
-  data: TData[],
-  globalAction?: GlobalActionButton,
+  columns: ColumnDef<TData, TValue>[];
+  data: TData[];
+  globalAction?: GlobalActionButton;
 }
 
-export function DataTable<TData, TValue>({
-  columns,
-  data,
-  globalAction,
-}: DataTableProps<TData, TValue>) {
-  const [rowSelection, setRowSelection] = useState({})
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+export function DataTable<TData, TValue>({ columns, data, globalAction }: DataTableProps<TData, TValue>) {
+  const [rowSelection, setRowSelection] = useState({});
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
   // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
@@ -54,22 +43,22 @@ export function DataTable<TData, TValue>({
     state: {
       rowSelection,
       columnFilters,
-    }
-  })
+    },
+  });
 
   const globalButton = globalAction && (
-    <Button variant="default" className="ml-2" onClick={globalAction.action}><globalAction.icon /> {globalAction.label}</Button>
-  )
+    <Button variant="default" className="ml-2" onClick={globalAction.action}>
+      <globalAction.icon /> {globalAction.label}
+    </Button>
+  );
 
   return (
     <Box>
       <Flex direction="row" className="py-4" justify="between">
         <Input
           placeholder="Filter..."
-          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("name")?.setFilterValue(event.target.value)
-          }
+          value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
+          onChange={(event) => table.getColumn('name')?.setFilterValue(event.target.value)}
           className="max-w-sm"
         />
         {globalButton}
@@ -82,14 +71,9 @@ export function DataTable<TData, TValue>({
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id} className="py-2">
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                      {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                     </TableHead>
-                  )
+                  );
                 })}
               </TableRow>
             ))}
@@ -97,14 +81,9 @@ export function DataTable<TData, TValue>({
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
+                <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </TableCell>
+                    <TableCell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TableCell>
                   ))}
                 </TableRow>
               ))
@@ -120,10 +99,8 @@ export function DataTable<TData, TValue>({
       </div>
 
       <div className="text-muted-foreground flex-1 text-sm p-2">
-        {table.getFilteredSelectedRowModel().rows.length} of{" "}
-        {table.getFilteredRowModel().rows.length} row(s) selected.
+        {table.getFilteredSelectedRowModel().rows.length} of {table.getFilteredRowModel().rows.length} row(s) selected.
       </div>
-
     </Box>
-  )
+  );
 }
