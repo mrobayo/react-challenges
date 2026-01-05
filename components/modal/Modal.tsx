@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Flex, Button } from '@radix-ui/themes';
+import { Flex } from '@radix-ui/themes';
 import {
   Dialog,
   DialogClose,
@@ -12,6 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { Button } from "@/components/ui/button";
 
 export type ModalProps = {
   title?: string;
@@ -23,6 +24,11 @@ export type ModalProps = {
   className?: string;
   showCloseButton?: boolean;
   footer?: React.ReactNode;
+  action?: {
+    label: string;
+    onClick: () => void;
+    variant?: "link" | "default" | "destructive" | "outline" | "secondary" | "ghost" | null | undefined;
+  }
 };
 
 export default function Modal({
@@ -35,17 +41,20 @@ export default function Modal({
   className,
   showCloseButton,
   footer,
+  action,
 }: ModalProps) {
   const defaultFooter = (
-    <Flex gap="3" justify="end">
+    <Flex gap="8px" justify="end" pt="16px">
       <DialogClose asChild>
-        <Button variant="soft" color="gray">
-          Close
-        </Button>
+        <Button variant="outline">Close</Button>
       </DialogClose>
-      <DialogClose asChild>
-        <Button color="blue">Confirm</Button>
-      </DialogClose>
+      { action ? (
+        <Button onClick={action.onClick} variant={action.variant}>{action.label}</Button>
+      ): (
+        <DialogClose asChild>
+          <Button color="blue">Confirm</Button>
+        </DialogClose>
+      )}
     </Flex>
   );
 

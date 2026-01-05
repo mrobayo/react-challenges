@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70c840fc-cd9a-4469-9385-c7f114f6161c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/system/pools/categories/category-modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/system/pools/categories/category-modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/system/pools/categories/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/system/pools/categories/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/app-sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/app-sidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/modal/show-modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modal/show-modal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +152,7 @@
       <workItem from="1766029514567" duration="5596000" />
       <workItem from="1766179945205" duration="33576000" />
       <workItem from="1766976051592" duration="5591000" />
-      <workItem from="1767034185321" duration="7761000" />
+      <workItem from="1767034185321" duration="10777000" />
     </task>
     <servers />
   </component>
