@@ -4,18 +4,9 @@ import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { Flex, Text, Button } from '@radix-ui/themes';
 import { DialogClose } from '@/components/ui/dialog';
-import Modal from '@/components/modal/Modal';
+import Modal, { type ModalProps } from '@/components/modal/Modal';
 
-type ModalProps = {
-  title: string;
-  description?: string;
-  children: React.ReactNode;
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  footer?: React.ReactNode;
-};
-
-export function showModal<P extends Omit<ModalProps, 'open' | 'onOpenChange'>>(
+export function showModal<P extends Omit<ModalProps, 'open' | 'unmount'>>(
   Component: React.ComponentType<P>,
   props: P
 ) {
@@ -36,7 +27,7 @@ export function showModal<P extends Omit<ModalProps, 'open' | 'onOpenChange'>>(
         });
       }
     };
-    return <Component {...props} open={open} onOpenChange={handleOpenChange} />;
+    return <Component {...props} open={open} unmount={() => handleOpenChange(false)} />;
   };
 
   root.render(<ModalHost mountPoint={root} />);

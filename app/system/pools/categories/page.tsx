@@ -64,9 +64,10 @@ export default function QzCategoriesPage() {
         globalAction={{
           label: 'Add',
           action: () => {
-            console.log('add...');
-            //setIsOpen(true);
             showModal(CategoryModal, {
+              afterSave: () => {
+                console.log('after save');
+              },
               open: true,
               unmount: () => {},
             });

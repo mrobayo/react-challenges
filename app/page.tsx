@@ -1,5 +1,7 @@
 import { Flex, Text, Button } from '@radix-ui/themes';
 import { AlertButton } from '@/components/modal/show-modal';
+import Modal from "@/components/modal/Modal";
+import React from "react";
 
 export default function HomePage() {
   const handleHello = () => {
@@ -12,6 +14,11 @@ export default function HomePage() {
         <Flex direction="column" gap="2">
           <Text>Hello from Radix Themes :)</Text>
           <Button>Lets go</Button>
+          <hr />
+          <Modal trigger={<Button variant="outline">Click</Button>} title={"ttile"}>
+            <Text>hola</Text>
+          </Modal>
+          <hr />
         </Flex>
       </main>
     </div>

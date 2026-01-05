@@ -1,15 +1,23 @@
-import { Button, Dialog, Flex, TextField, Text } from '@radix-ui/themes';
-import Modal from '@/components/modal/Modal';
-
+import React from "react";
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Button, Flex } from "@radix-ui/themes";
+import { TextField } from '@radix-ui/themes';
+
+import { DialogClose } from "@/components/ui/dialog";
+import Modal, { type ModalProps } from '@/components/modal/Modal';
 
 const schema = yup.object({
   name: yup.string().required('Name is required'),
 });
 
-export function CategoryModal(props: { open: boolean }) {
+type CategoryModalProps = {
+  afterSave?: () => void;
+} & ModalProps
+
+export function CategoryModal({ afterSave, unmount, ...props }: CategoryModalProps) {
   const {
     register,
     handleSubmit,
@@ -19,11 +27,25 @@ export function CategoryModal(props: { open: boolean }) {
   });
 
   const onSubmit = (data) => {
+    afterSave?.();
     console.log('Form Submitted:', data);
   };
+  const footer = (
+    <Flex gap="3" justify="end">
+      <DialogClose asChild>
+        <Button variant="soft" color="gray">
+          Cancel
+        </Button>
+      </DialogClose>
+      <Button color="blue" onClick={() => {
+        afterSave?.();
+        unmount?.();
+      }}>Test</Button>
+    </Flex>
+  );
 
   return (
-    <Modal title="title" description="description" {...props}>
+    <Modal title="Add Category" {...props} footer={footer} unmount={unmount}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextField.Root
           //defaultValue={state.value}

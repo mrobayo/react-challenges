@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Flex, Text, Button } from '@radix-ui/themes';
+import { Flex, Button } from '@radix-ui/themes';
 import {
   Dialog,
   DialogClose,
@@ -9,21 +9,33 @@ import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogOverlay,
-  DialogPortal,
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-type ModalProps = {
-  title: string;
+
+export type ModalProps = {
+  title?: string;
   description?: string;
-  children: React.ReactNode;
-  open: boolean;
-  onOpenChange?: (open: boolean) => void;
+  children?: React.ReactNode;
+  trigger?: React.ReactNode;
+  open?: boolean;
+  unmount?: () => void;
+  className?: string;
+  showCloseButton?: boolean;
   footer?: React.ReactNode;
 };
 
-export default function Modal({ title, description, children, open, onOpenChange, footer }: ModalProps) {
+export default function Modal({
+  title,
+  description,
+  children,
+  trigger,
+  open,
+  unmount,
+  className,
+  showCloseButton,
+  footer,
+}: ModalProps) {
   const defaultFooter = (
     <Flex gap="3" justify="end">
       <DialogClose asChild>
@@ -38,18 +50,13 @@ export default function Modal({ title, description, children, open, onOpenChange
   );
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogPortal>
-        <DialogOverlay
-          style={{
-            position: 'fixed',
-            inset: 0,
-            backgroundColor: 'rgba(0,0,0,0.45)',
-          }}
-        />
+    <Dialog open={open} onOpenChange={unmount}>
+      {trigger && (
+        <DialogTrigger asChild>{trigger}</DialogTrigger>
+      )}
         <DialogContent
-          // maxWidth="450px"
-          // showCloseButton={false}
+          className={className}
+          showCloseButton={showCloseButton}
           style={{
             backgroundColor: 'white',
             borderRadius: 12,
@@ -60,16 +67,14 @@ export default function Modal({ title, description, children, open, onOpenChange
             <DialogTitle>{title}</DialogTitle>
             {description && <DialogDescription>{description}</DialogDescription>}
           </DialogHeader>
-
           <Flex direction="column" gap="4">
             <Flex justify="between" align="center"></Flex>
             <Flex direction="column" gap="3">
               {children}
             </Flex>
-            {footer ?? defaultFooter}
+            {footer ?? <DialogFooter>{defaultFooter}</DialogFooter>}
           </Flex>
         </DialogContent>
-      </DialogPortal>
     </Dialog>
   );
 }
