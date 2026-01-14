@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { ColumnDef } from '@tanstack/react-table';
 import { DataTable } from '@/components/data-table/DataTable';
-import { Heading } from '@radix-ui/themes';
+import { Flex, Heading } from '@radix-ui/themes';
 import { Checkbox } from '@/components/ui/checkbox';
 import { LuPlus } from 'react-icons/lu';
 import { CategoryModal } from '@/app/system/pools/categories/category-modal';
@@ -42,7 +42,6 @@ const columns: ColumnDef<QzCategory>[] = [
 export default function QzCategoriesPage() {
   const [categories, setCategories] = useState<QzCategory[]>([]);
   const [loading, setLoading] = useState(true);
-  // const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     fetch('/api/categories')
@@ -56,7 +55,7 @@ export default function QzCategoriesPage() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div>
+    <Flex direction="column">
       <Heading as="h3">Quiz Categories</Heading>
       <DataTable
         columns={columns}
@@ -75,7 +74,6 @@ export default function QzCategoriesPage() {
           icon: LuPlus,
         }}
       />
-      {/*<CategoryModal open={isOpen}/>*/}
-    </div>
+    </Flex>
   );
 }

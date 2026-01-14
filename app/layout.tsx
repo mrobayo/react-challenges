@@ -33,14 +33,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
-          <header>
-            <Navbar />
-          </header>
           <SidebarProvider>
             <aside>
               <AppSidebar />
             </aside>
-            <main className="container py-10">{children}</main>
+            <div className="w-full px-0">
+              <header>
+                <Navbar />
+              </header>
+              <main className="container px-8 py-10 bg-neutral-50 dark:bg-neutral-900">{children}</main>
+            </div>
           </SidebarProvider>
         </Providers>
       </body>

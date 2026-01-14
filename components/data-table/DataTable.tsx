@@ -65,7 +65,7 @@ export function DataTable<TData, TValue>({ columns, data, globalAction }: DataTa
       </Flex>
       <div className="overflow-hidden rounded-md border">
         <Table>
-          <TableHeader className="bg-stone-100">
+          <TableHeader className="bg-stone-100 dark:bg-stone-600">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
