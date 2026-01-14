@@ -6,7 +6,7 @@ import { DataTable } from '@/components/data-table/DataTable';
 import { Flex, Heading } from '@radix-ui/themes';
 import { Checkbox } from '@/components/ui/checkbox';
 import { LuPlus } from 'react-icons/lu';
-import { CategoryModal } from '@/app/system/pools/categories/category-modal';
+import { CategoryModal } from '@/app/system/pools/categories/_components/category-modal';
 import { showModal } from '@/components/modal/show-modal';
 
 type QzCategory = {
